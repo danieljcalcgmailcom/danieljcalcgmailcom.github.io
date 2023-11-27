@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>JS Bin</title>
 </head>
+
 <body>
   <button id="RonaldoPoints" type="button">Ronaldo</button>
   <button id="autoclicker" type="button">click for me</button>
-<img id="Sewy" src="https://cdns-images.dzcdn.net/images/artist/2375ae3be60544b4c2fc4c7e256dec50/500x500.jpg">
-<p id="score"> score=0</p>
+  <img id="Sewy" src="https://cdns-images.dzcdn.net/images/artist/2375ae3be60544b4c2fc4c7e256dec50/500x500.jpg">
+  <p id="score"> score=0</p>
 </body>
+
 </html>
 <script>
-  var score= 0
-  var Ronaldo= 1
-  document.getElementById("Sewy").addEventListener("click",increaseScore)
-  document.getElementById("RonaldoPoints").addEventListener("click",upgrade)
-  document.getElementById("autoclicker").addEventListener("click",autoclicker)
-  function increaseScore(){
+  var score = 0
+  var Ronaldo = 1
+  document.getElementById("Sewy").addEventListener("click", increaseScore)
+  document.getElementById("RonaldoPoints").addEventListener("click", upgrade)
+  document.getElementById("autoclicker").addEventListener("click", autoclicker)
+  function increaseScore() {
     score = score + Ronaldo
-    document.getElementById("score").innerText=score
+    document.getElementById("score").innerText = score
     console.log(score)
   }
-  function upgrade(){
-      if(score>=25){
-        score=score-25
-        Ronaldo=2
+  function upgrade() {
+    if (score >= 25) {
+      score = score - 25
+      Ronaldo = 2
+    }
   }
-}
-  function autoclicker(){
-   if(score>=50){
-    score=score-50
-    setInterval(increaseScore,100)
-  } 
+  function autoclicker() {
+    if (score >= 50) {
+      score = score - 50
+      setInterval(increaseScore, 100)
+    }
   }
 </script>

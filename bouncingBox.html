@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
-</head>
-<body>
-<div id="box">
-    width: 50px;
-    height: 50px;
-</div>
-</body>
-</html>
-<style>
 
-</style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+    </div>
+</body>
+
+</html>
+<script>
+    var x = 100
+    var y = 100
+    var xdirection = -100
+    var ydirection = 100
+    document.getElementById("box").addEventListener("click", movebox)
+    setInterval(movebox, 16)
+    function movebox() {
+        document.getElementById("box").style.top = y + "px";
+        document.getElementById("box").style.left = x + "px";
+        x = x + xdirection
+        y = y + ydirection
+        if (x <= 0) {
+            xdirection = 100
+        }
+        if (x >= 1875) {
+            xdirection = -100
+        }
+        if (y <= 0) {
+            ydirection = 100
+        }
+        if (y >= 875) {
+            ydirection = -100
+        }
+    }
+</script>
